@@ -3,6 +3,10 @@ import Home from '../src/app/page'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 
+module.exports = {
+  testEnvironment: 'jsdom', // Ensures that jsdom is used for DOM manipulations in tests
+};
+
 // Mock the API functions (GET and POST)
 jest.mock('src/app/api/tasks/route.js', () => ({
   GET: jest.fn(),

@@ -1,22 +1,12 @@
 module.exports = {
-  testEnvironment: 'jest-environment-jsdom',
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  testEnvironment: 'jsdom',  // Use jsdom as the test environment
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'], // Set up jest-dom for better assertions
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest', // Use babel-jest to transform JS/JSX/TS/TSX files
   },
+  moduleDirectories: ['node_modules', 'src'],  // Add 'src' to module directories for resolving imports
   moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1',  // Resolves 'src/' as the root
+    '^src/(.*)$': '<rootDir>/src/$1',  // Maps 'src' to the root directory for imports
   },
-  moduleDirectories: ['node_modules', 'src'],  // Add 'src' for module resolution
-}
-
-// jest.config.js
-module.exports = {
-  setupFiles: ['<rootDir>/jest.setup.js'], // Path to your setup file
-};
-
-module.exports = {
-  moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1', // Maps 'src' to your root directory
-  },
+  setupFiles: ['<rootDir>/jest.setup.js'],  // Specify the setup file
 };

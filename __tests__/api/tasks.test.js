@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { GET, POST } from '../src/app/api/tasks/route.js'  // Import the functions directly
+import { GET, POST } from '../src/app/api/tasks/route.js';  // Relative path
 import { createMocks } from 'node-mocks-http'
 
 // Mock the Prisma Client to test database interactions
